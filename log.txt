@@ -1,0 +1,169 @@
+lab-rasp-01@raspberrypi:~/llama_chatbot $ python app.py
+llama_model_loader: loaded meta data with 23 key-value pairs and 201 tensors from ./llama_model/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.name str              = tinyllama_tinyllama-1.1b-chat-v1.0
+llama_model_loader: - kv   2:                       llama.context_length u32              = 2048
+llama_model_loader: - kv   3:                     llama.embedding_length u32              = 2048
+llama_model_loader: - kv   4:                          llama.block_count u32              = 22
+llama_model_loader: - kv   5:                  llama.feed_forward_length u32              = 5632
+llama_model_loader: - kv   6:                 llama.rope.dimension_count u32              = 64
+llama_model_loader: - kv   7:                 llama.attention.head_count u32              = 32
+llama_model_loader: - kv   8:              llama.attention.head_count_kv u32              = 4
+llama_model_loader: - kv   9:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                       llama.rope.freq_base f32              = 10000.000000
+llama_model_loader: - kv  11:                          general.file_type u32              = 15
+llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,32000]   = ["<unk>", "<s>", "</s>", "<0x00>", "<...
+llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,32000]   = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  15:                  tokenizer.ggml.token_type arr[i32,32000]   = [2, 3, 3, 6, 6, 6, 6, 6, 6, 6, 6, 6, ...
+llama_model_loader: - kv  16:                      tokenizer.ggml.merges arr[str,61249]   = ["▁ t", "e r", "i n", "▁ a", "e n...
+llama_model_loader: - kv  17:                tokenizer.ggml.bos_token_id u32              = 1
+llama_model_loader: - kv  18:                tokenizer.ggml.eos_token_id u32              = 2
+llama_model_loader: - kv  19:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  20:            tokenizer.ggml.padding_token_id u32              = 2
+llama_model_loader: - kv  21:                    tokenizer.chat_template str              = {% for message in messages %}\n{% if m...
+llama_model_loader: - kv  22:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   45 tensors
+llama_model_loader: - type q4_K:  135 tensors
+llama_model_loader: - type q6_K:   21 tensors
+llm_load_vocab: special tokens cache size = 3
+llm_load_vocab: token to piece cache size = 0.1684 MB
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = llama
+llm_load_print_meta: vocab type       = SPM
+llm_load_print_meta: n_vocab          = 32000
+llm_load_print_meta: n_merges         = 0
+llm_load_print_meta: vocab_only       = 0
+llm_load_print_meta: n_ctx_train      = 2048
+llm_load_print_meta: n_embd           = 2048
+llm_load_print_meta: n_layer          = 22
+llm_load_print_meta: n_head           = 32
+llm_load_print_meta: n_head_kv        = 4
+llm_load_print_meta: n_rot            = 64
+llm_load_print_meta: n_swa            = 0
+llm_load_print_meta: n_embd_head_k    = 64
+llm_load_print_meta: n_embd_head_v    = 64
+llm_load_print_meta: n_gqa            = 8
+llm_load_print_meta: n_embd_k_gqa     = 256
+llm_load_print_meta: n_embd_v_gqa     = 256
+llm_load_print_meta: f_norm_eps       = 0.0e+00
+llm_load_print_meta: f_norm_rms_eps   = 1.0e-05
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 5632
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 1
+llm_load_print_meta: pooling type     = 0
+llm_load_print_meta: rope type        = 0
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_ctx_orig_yarn  = 2048
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: ssm_dt_b_c_rms   = 0
+llm_load_print_meta: model type       = 1B
+llm_load_print_meta: model ftype      = Q4_K - Medium
+llm_load_print_meta: model params     = 1.10 B
+llm_load_print_meta: model size       = 636.18 MiB (4.85 BPW) 
+llm_load_print_meta: general.name     = tinyllama_tinyllama-1.1b-chat-v1.0
+llm_load_print_meta: BOS token        = 1 '<s>'
+llm_load_print_meta: EOS token        = 2 '</s>'
+llm_load_print_meta: UNK token        = 0 '<unk>'
+llm_load_print_meta: PAD token        = 2 '</s>'
+llm_load_print_meta: LF token         = 13 '<0x0A>'
+llm_load_print_meta: max token length = 48
+llm_load_tensors: ggml ctx size =    0.09 MiB
+llm_load_tensors:        CPU buffer size =   636.18 MiB
+....................................................................................
+llama_new_context_with_model: n_ctx      = 512
+llama_new_context_with_model: n_batch    = 512
+llama_new_context_with_model: n_ubatch   = 512
+llama_new_context_with_model: flash_attn = 0
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+llama_kv_cache_init:        CPU KV buffer size =    11.00 MiB
+llama_new_context_with_model: KV self size  =   11.00 MiB, K (f16):    5.50 MiB, V (f16):    5.50 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.12 MiB
+llama_new_context_with_model:        CPU compute buffer size =    66.50 MiB
+llama_new_context_with_model: graph nodes  = 710
+llama_new_context_with_model: graph splits = 1
+AVX = 0 | AVX_VNNI = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 0 | NEON = 1 | SVE = 0 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+Model metadata: {'tokenizer.chat_template': "{% for message in messages %}\n{% if message['role'] == 'user' %}\n{{ '<|user|>\n' + message['content'] + eos_token }}\n{% elif message['role'] == 'system' %}\n{{ '<|system|>\n' + message['content'] + eos_token }}\n{% elif message['role'] == 'assistant' %}\n{{ '<|assistant|>\n'  + message['content'] + eos_token }}\n{% endif %}\n{% if loop.last and add_generation_prompt %}\n{{ '<|assistant|>' }}\n{% endif %}\n{% endfor %}", 'tokenizer.ggml.padding_token_id': '2', 'tokenizer.ggml.unknown_token_id': '0', 'tokenizer.ggml.eos_token_id': '2', 'general.architecture': 'llama', 'llama.rope.freq_base': '10000.000000', 'llama.context_length': '2048', 'general.name': 'tinyllama_tinyllama-1.1b-chat-v1.0', 'llama.embedding_length': '2048', 'llama.feed_forward_length': '5632', 'llama.attention.layer_norm_rms_epsilon': '0.000010', 'llama.rope.dimension_count': '64', 'tokenizer.ggml.bos_token_id': '1', 'llama.attention.head_count': '32', 'llama.block_count': '22', 'llama.attention.head_count_kv': '4', 'general.quantization_version': '2', 'tokenizer.ggml.model': 'llama', 'general.file_type': '15'}
+Available chat formats from metadata: chat_template.default
+Using gguf chat template: {% for message in messages %}
+{% if message['role'] == 'user' %}
+{{ '<|user|>
+' + message['content'] + eos_token }}
+{% elif message['role'] == 'system' %}
+{{ '<|system|>
+' + message['content'] + eos_token }}
+{% elif message['role'] == 'assistant' %}
+{{ '<|assistant|>
+'  + message['content'] + eos_token }}
+{% endif %}
+{% if loop.last and add_generation_prompt %}
+{{ '<|assistant|>' }}
+{% endif %}
+{% endfor %}
+Using chat eos_token: </s>
+Using chat bos_token: <s>
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+127.0.0.1 - - [04/Sep/2024 13:10:14] "GET / HTTP/1.1" 200 -
+
+llama_print_timings:        load time =   22639.93 ms
+llama_print_timings:      sample time =      16.66 ms /    50 runs   (    0.33 ms per token,  3001.74 tokens per second)
+llama_print_timings: prompt eval time =   22628.23 ms /     3 tokens ( 7542.74 ms per token,     0.13 tokens per second)
+llama_print_timings:        eval time =   62870.11 ms /    49 runs   ( 1283.06 ms per token,     0.78 tokens per second)
+llama_print_timings:       total time =   86281.55 ms /    52 tokens
+User Input: hello.
+AI Response: Hello, how are you doing?
+
+6. Thank you:
+Thank you for your hard work and dedication.
+Thank you for being so kind and supportive.
+Thank you for your contribution to the team.
+
+7
+127.0.0.1 - - [04/Sep/2024 13:13:25] "GET /get?msg=hello. HTTP/1.1" 200 -
+Llama.generate: 1 prefix-match hit, remaining 4 prompt tokens to eval
+
+llama_print_timings:        load time =   22639.93 ms
+llama_print_timings:      sample time =      19.41 ms /    50 runs   (    0.39 ms per token,  2576.66 tokens per second)
+llama_print_timings: prompt eval time =   25526.23 ms /     4 tokens ( 6381.56 ms per token,     0.16 tokens per second)
+llama_print_timings:        eval time =   51238.30 ms /    49 runs   ( 1045.68 ms per token,     0.96 tokens per second)
+llama_print_timings:       total time =   79820.47 ms /    53 tokens
+User Input: how are you?
+AI Response: I've been thinking about you lately. I remember when I used to talk to you every day. That was a long time ago, but it feels like just yesterday. I miss our chats, and I miss the way we used to
+127.0.0.1 - - [04/Sep/2024 13:16:10] "GET /get?msg=how%20are%20you%3F HTTP/1.1" 200 -
+Llama.generate: 1 prefix-match hit, remaining 5 prompt tokens to eval
+
+llama_print_timings:        load time =   22639.93 ms
+llama_print_timings:      sample time =       0.35 ms /     1 runs   (    0.35 ms per token,  2832.86 tokens per second)
+llama_print_timings: prompt eval time =   15991.35 ms /     5 tokens ( 3198.27 ms per token,     0.31 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =   16315.80 ms /     6 tokens
+User Input: what is sushi?
+AI Response: 
+127.0.0.1 - - [04/Sep/2024 13:17:00] "GET /get?msg=what%20is%20sushi%3F HTTP/1.1" 200 -
+Llama.generate: 5 prefix-match hit, remaining 1 prompt tokens to eval
+
+llama_print_timings:        load time =   22639.93 ms
+llama_print_timings:      sample time =     161.35 ms /    50 runs   (    3.23 ms per token,   309.89 tokens per second)
+llama_print_timings: prompt eval time =       0.00 ms /     0 tokens (     nan ms per token,      nan tokens per second)
+llama_print_timings:        eval time =   70172.47 ms /    50 runs   ( 1403.45 ms per token,     0.71 tokens per second)
+llama_print_timings:       total time =   75162.01 ms /    50 tokens
+User Input: what is sushi?
+AI Response: Sushi is a non-vegetarian dish made up of boiled chicken, rice, and spices. The chicken is usually marinated in yogurt and spices like coriander, cumin,
+127.0.0.1 - - [04/Sep/2024 13:20:45] "GET /get?msg=what%20is%20sushi%3F HTTP/1.1" 200 -
